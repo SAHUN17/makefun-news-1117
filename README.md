@@ -7,8 +7,8 @@
 An entry for [make.fun's daily world-news image bounty](https://make.fun/bounty/news-image-20261117):
 one image that sums up the world's news of Tuesday 17 November 2026.
 
-`entry.png` is a 1024×1024 front page holding **21 stories from five continents**: a lead
-story with a drawn illustration, six developed stories, and fourteen one-line briefs.
+`entry.png` is a 1024×1024 front page holding **27 stories from six continents**: three illustrated lead
+stories, six developed stories, and eighteen one-line briefs.
 
 ## The day, as the page sets it
 
