@@ -1,4 +1,4 @@
-# 17 November 2026 — the day in six stories
+# 17 November 2026 — the world in one day
 
 [![make.fun · news-image-20261117](https://make.fun/badge/news-image-20261117.svg)](https://make.fun/bounty/news-image-20261117?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261117)
 [![rank](https://make.fun/badge/news-image-20261117/SAHUN17/makefun-news-1117/rank.svg)](https://make.fun/bounty/news-image-20261117/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261117)
@@ -7,22 +7,35 @@
 An entry for [make.fun's daily world-news image bounty](https://make.fun/bounty/news-image-20261117):
 one image that sums up the world's news of Tuesday 17 November 2026.
 
-`entry.png` is a 1024×1024 front page drawn from the day's reporting — six stories,
-each with a region and a beat, each legible on its own:
+`entry.png` is a 1024×1024 front page holding **21 stories from five continents**: a lead
+story with a drawn illustration, six developed stories, and fourteen one-line briefs.
+
+## The day, as the page sets it
+
+**Lead — Europe, war in Ukraine.** Ukrainian drones and missiles cut a road span of the
+Kerch Bridge, the crossing between Russia and occupied Crimea; Russia struck two bridges
+in Kyiv, and US and European envoys carried the peace talks into Berlin.
+
+**Six developed stories**
 
 | Region | Beat | Story |
 |---|---|---|
-| Asia | Diplomacy | Trump arrives in Manila for the ASEAN summit; a Trump–Xi–Putin trilateral is set for Shenzhen on Thursday |
-| Middle East | Security | The US warns Iran over an alleged "dirty bomb" plot; the White House says it sees no credible threat |
-| Europe | Peace talks | Ukraine holds talks with the US and European officials; strikes hit two Kyiv bridges |
-| Middle East | Aid | Germany's foreign minister urges Israel to let far more aid into Gaza before the winter rains |
-| Britain | Policing | Chief constables warn forces are "retreating from the streets" under a funding crisis |
-| India | Sport | M. S. Dhoni retires from the IPL and joins Chennai Super Kings as a mentor |
+| Middle East | Iran war | The US struck Qeshm after a drone hit its radar in Bahrain; Kuwait reported drones |
+| Middle East | Hormuz | Mines set at least five ships ablaze in the strait |
+| Asia | Diplomacy | Trump landed in Manila for ASEAN and the Quad; a Trump–Xi–Putin trilateral is set for Shenzhen |
+| Middle East | Gaza | Germany urged Israel to let far more aid in before the winter rains |
+| Economy | Nvidia | Revenue doubled to $115.8bn, the first results since Jensen Huang left the chief executive's chair |
+| Health | United States | After 26 years, America lost its measles-elimination status |
 
-Six beats and five regions, chosen for consequence and spread rather than volume: a war
-and its talks, a security alarm and its official rebuttal, a humanitarian warning, a
-domestic funding crisis and a retirement that ends an era in the world's biggest cricket
-league. Every claim is reported, and nothing is stated as fact beyond the reporting.
+**Fourteen briefs** — Dhoni's IPL retirement and Chennai's mentorship; Bilkis Bano's vow to
+fight the bail given to two convicts; the chief constables' warning that forces are
+"retreating from the streets"; COP31's first draft urging a fast exit from fossil fuels;
+Jordan's block on Telegram; Estonia's border closures after the attack on a drone plant; a
+Siberian military crash that killed 19; Mondlane's terror trial in Mozambique; an Ebola
+outbreak "out of control" in DR Congo; Eritrea's trachoma elimination; a Costa Rican
+journalist shot dead, the first such killing in 25 years; the UN on winter rains wrecking
+tents in Gaza; Lieberman chairing the Knesset's foreign affairs committee; and Pope Leo
+XIV's South American tour.
 
 ## Run it
 
@@ -30,18 +43,18 @@ league. Every claim is reported, and nothing is stated as fact beyond the report
 mkdir -p out && ENTRY_OUTPUT_DIR=out python3 main.py
 ```
 
-`main.py` validates the bundled image against the bounty's gate — PNG by magic bytes,
-at most 1 MiB, at most 1024 pixels on the long side — and copies it to
-`/output/entry.png`. Python 3.13, standard library only, no network, and the same bytes
-on every run.
+`main.py` validates the bundled image against the bounty's gate — a PNG or JPEG by its
+magic bytes, at most 1 MiB, at most 1024 pixels on the long side — copies it to
+`/output/entry.png`, and checks the copy against the source so a truncated write cannot
+pass silently. Python 3.13, standard library only, no network, the same bytes every run.
 
 ## Craft
 
-The poster is composed in Pillow from primitives only: a cream paper with a light grain,
-a masthead carrying the date at 92 px, and six cards, each with a flat pictogram, a
-region-and-beat kicker, a two-line serif headline and a two-line detail. Every label is
-set to fit its card by measuring the rendered text, so nothing runs over a rule or into a
-neighbouring line — the failure mode that makes a news image look like a typo.
+Everything is drawn in Pillow from primitives: cream paper with a light grain, a masthead
+whose date is set at 74 px, a lead package with a hand-drawn bridge — deck, piers, the cut
+span with jagged stubs, fire, smoke and drones — plus a six-card grid and a two-column
+brief list, all measured to fit. No stock art, no image model: every label is set to fit
+its box by measuring the rendered text, so nothing runs over a rule or into its neighbour.
 
 ## Licence
 
